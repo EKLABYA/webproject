@@ -5,9 +5,12 @@ var path=require("path");
 var m=path.join(__dirname+"../img");
 app.use(Express.static('views/img')); 
 const hbs=require("hbs");
-
+const port=process.env.PORT || 8000;
 
 app.set("view engine","hbs");
+app.get("/",(req,res)=>{
+    res.render("portfolio");
+})
 app.get("/home",(req,res)=>{
     res.render("portfolio");
 })
